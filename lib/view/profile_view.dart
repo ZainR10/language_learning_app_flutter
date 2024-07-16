@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:language_learning_app_flutter/res/components/image_container.dart';
+import 'package:language_learning_app_flutter/res/components/language_name_row.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
@@ -24,22 +25,23 @@ class _ProfileViewState extends State<ProfileView> {
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 //Profile pic and Name
                 child: Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CircleAvatar(
-                        backgroundColor: Colors.green,
-                        radius: 50,
-                        child: Icon(
-                          Icons.person_4_outlined,
-                          size: 50,
+                  child: Center(
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.green,
+                          radius: 50,
+                          child: Icon(
+                            Icons.person_4_outlined,
+                            size: 50,
+                          ),
                         ),
-                      ),
-                      Text(
-                        'Hi, Zain',
-                        style: TextStyle(fontSize: 40),
-                      ),
-                    ],
+                        Text(
+                          'Hi, Zain',
+                          style: TextStyle(fontSize: 40),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -50,6 +52,16 @@ class _ProfileViewState extends State<ProfileView> {
               const Text(
                 'Selected Languages:',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400),
+              ),
+              SizedBox(
+                height: height * .02,
+              ),
+
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 12),
+                child: LanguageNameRow(
+                  languageNames: ['Urdu', 'Arabic', 'Spanish'],
+                ),
               ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
