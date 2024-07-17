@@ -77,12 +77,32 @@ class _ProfileViewState extends State<ProfileView> {
                 SizedBox(
                   height: height * .03,
                 ),
-                const Text(
-                  'Selected Languages:',
-                  style: TextStyle(
-                      letterSpacing: 2,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w400),
+                Row(
+                  children: [
+                    const Text(
+                      'Selected Languages',
+                      style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          letterSpacing: 2,
+                          fontSize: 28,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    SizedBox(
+                      width: width * 0.05,
+                    ),
+                    Icon(
+                      Icons.translate_sharp,
+                      size: 35,
+                      weight: 20,
+                      color: Colors.indigo[700],
+                      shadows: const [
+                        BoxShadow(
+                            blurRadius: 20,
+                            color: Colors.indigoAccent,
+                            spreadRadius: 10)
+                      ],
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: height * .02,
@@ -94,17 +114,23 @@ class _ProfileViewState extends State<ProfileView> {
                     languageNames: ['Urdu', 'Arabic', 'Spanish'],
                   ),
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     // created a image holding container component to make code look clean
                     ImageContainer(
+                      width: width * .25,
+                      height: height * .12,
                       imageUrl: 'assets/images/pakistan-flag.svg',
                     ),
                     ImageContainer(
+                      width: width * .25,
+                      height: height * .12,
                       imageUrl: 'assets/images/saudi-arabia-flag.svg',
                     ),
                     ImageContainer(
+                      width: width * .25,
+                      height: height * .12,
                       imageUrl: 'assets/images/spain-flag.svg',
                     ),
                   ],
@@ -117,6 +143,7 @@ class _ProfileViewState extends State<ProfileView> {
                     const Text(
                       'Current Progress',
                       style: TextStyle(
+                          decoration: TextDecoration.underline,
                           letterSpacing: 2,
                           fontSize: 28,
                           fontWeight: FontWeight.w400),
@@ -135,7 +162,7 @@ class _ProfileViewState extends State<ProfileView> {
                             color: Colors.indigoAccent,
                             spreadRadius: 10)
                       ],
-                    )
+                    ),
                   ],
                 ),
                 SizedBox(
