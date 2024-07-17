@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:language_learning_app_flutter/res/components/bottom_nav_bar.dart';
 import 'package:language_learning_app_flutter/res/components/image_container.dart';
 import 'package:language_learning_app_flutter/res/components/language_name_row.dart';
 import 'package:language_learning_app_flutter/res/components/progress_component.dart';
+import 'package:language_learning_app_flutter/utils/routes/routes_name.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
@@ -11,6 +13,26 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+
+    switch (index) {
+      case 0:
+        Navigator.pushNamed(context, RoutesName.profileView);
+        break;
+      case 1:
+        Navigator.pushNamed(context, RoutesName.coursesView);
+        break;
+      case 2:
+        Navigator.pushNamed(context, RoutesName.resultView);
+        break;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     // media queiry funtions for hieght and width
@@ -18,35 +40,8 @@ class _ProfileViewState extends State<ProfileView> {
     final height = MediaQuery.of(context).size.height * 1;
     final width = MediaQuery.of(context).size.width * 1;
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-          selectedFontSize: 20,
-
-          // type: BottomNavigationBarType.shifting,
-          iconSize: 35,
-          unselectedFontSize: 15,
-          selectedItemColor: Colors.blueAccent,
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.account_circle,
-                  color: Colors.black,
-                ),
-                label: "profile"),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.menu_book,
-                  color: Colors.black,
-                ),
-                label: "Lessons"),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.assessment,
-                  color: Colors.black,
-                ),
-                label: "Results"),
-          ]),
+      bottomNavigationBar: CustomBottomNavBar(
+          selectedIndex: _selectedIndex, onItemTapped: _onItemTapped),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10),
@@ -62,7 +57,7 @@ class _ProfileViewState extends State<ProfileView> {
                       child: Column(
                         children: [
                           CircleAvatar(
-                            backgroundColor: Colors.green,
+                            backgroundColor: Colors.indigoAccent,
                             radius: 50,
                             child: Icon(
                               Icons.person_4_outlined,
@@ -117,12 +112,31 @@ class _ProfileViewState extends State<ProfileView> {
                 SizedBox(
                   height: height * .03,
                 ),
-                const Text(
-                  'Current Progress:',
-                  style: TextStyle(
-                      letterSpacing: 2,
-                      fontSize: 24,
-                      fontWeight: FontWeight.w400),
+                Row(
+                  children: [
+                    const Text(
+                      'Current Progress',
+                      style: TextStyle(
+                          letterSpacing: 2,
+                          fontSize: 28,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    SizedBox(
+                      width: width * 0.05,
+                    ),
+                    Icon(
+                      Icons.auto_graph_outlined,
+                      size: 40,
+                      weight: 20,
+                      color: Colors.indigo[700],
+                      shadows: const [
+                        BoxShadow(
+                            blurRadius: 20,
+                            color: Colors.indigoAccent,
+                            spreadRadius: 10)
+                      ],
+                    )
+                  ],
                 ),
                 SizedBox(
                   height: height * .02,
