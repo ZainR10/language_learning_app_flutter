@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:language_learning_app_flutter/utils/routes/routes_name.dart';
 import 'package:language_learning_app_flutter/view/courses_view.dart';
+import 'package:language_learning_app_flutter/view/lesson_details_view.dart.dart';
 import 'package:language_learning_app_flutter/view/profile_view.dart';
 import 'package:language_learning_app_flutter/view/results_view.dart';
 
@@ -23,6 +24,12 @@ class Routes {
         {
           return MaterialPageRoute(
             builder: (BuildContext context) => const ResultsView(),
+          );
+        }
+      case RoutesName.lessonDetailsView:
+        {
+          return MaterialPageRoute(
+            builder: (BuildContext context) => const LessonDetailsView(),
           );
         }
       default:

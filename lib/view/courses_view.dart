@@ -38,7 +38,8 @@ class _CoursesViewState extends State<CoursesView> {
     final width = MediaQuery.of(context).size.width * 1;
     return Scaffold(
         appBar: AppBar(
-          title: Text('Courses'),
+          backgroundColor: Colors.transparent,
+          title: const Text('Courses'),
         ),
         bottomNavigationBar: CustomBottomNavBar(
             selectedIndex: _selectedIndex, onItemTapped: _onItemTapped),
@@ -66,7 +67,10 @@ class _CoursesViewState extends State<CoursesView> {
                         height: height * .08,
                         width: width * .28,
                         title: '  Get\nStarted',
-                        onPress: () {})
+                        onPress: () {
+                          Navigator.pushNamed(
+                              context, RoutesName.lessonDetailsView);
+                        }),
                   ],
                 ),
                 Row(
@@ -88,7 +92,10 @@ class _CoursesViewState extends State<CoursesView> {
                         height: height * .08,
                         width: width * .28,
                         title: '  Get\nStarted',
-                        onPress: () {})
+                        onPress: () {
+                          Navigator.pushNamed(
+                              context, RoutesName.lessonDetailsView);
+                        }),
                   ],
                 ),
                 Row(
@@ -110,7 +117,10 @@ class _CoursesViewState extends State<CoursesView> {
                         height: height * .08,
                         width: width * .28,
                         title: '  Get\nStarted',
-                        onPress: () {})
+                        onPress: () {
+                          Navigator.pushNamed(
+                              context, RoutesName.lessonDetailsView);
+                        }),
                   ],
                 )
               ],

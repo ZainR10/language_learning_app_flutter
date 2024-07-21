@@ -14,7 +14,8 @@ class CustomBottomNavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       currentIndex: selectedIndex,
-      selectedFontSize: 15,
+      selectedLabelStyle:
+          const TextStyle(fontSize: 15, fontWeight: FontWeight.w900),
       iconSize: 25,
       unselectedFontSize: 15,
       selectedItemColor: Colors.blueAccent,
@@ -33,7 +34,7 @@ class CustomBottomNavBar extends StatelessWidget {
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.auto_graph_sharp),
-          label: "Results",
+          label: "Progress",
         ),
       ],
     );
