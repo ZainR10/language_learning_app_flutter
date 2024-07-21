@@ -69,7 +69,7 @@ class _CoursesViewState extends State<CoursesView> {
                         title: '  Get Started',
                         onPress: () {
                           Navigator.pushNamed(
-                              context, RoutesName.lessonDetailsView);
+                              context, RoutesName.roadMapDetailsView);
                         }),
                   ],
                 ),
@@ -94,7 +94,7 @@ class _CoursesViewState extends State<CoursesView> {
                         title: '  Get Started',
                         onPress: () {
                           Navigator.pushNamed(
-                              context, RoutesName.lessonDetailsView);
+                              context, RoutesName.roadMapDetailsView);
                         }),
                   ],
                 ),
@@ -119,7 +119,7 @@ class _CoursesViewState extends State<CoursesView> {
                         title: '  Get Started',
                         onPress: () {
                           Navigator.pushNamed(
-                              context, RoutesName.lessonDetailsView);
+                              context, RoutesName.roadMapDetailsView);
                         }),
                   ],
                 )

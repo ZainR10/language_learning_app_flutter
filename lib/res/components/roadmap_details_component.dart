@@ -25,7 +25,17 @@ class LessonDetailsComponent extends StatelessWidget {
         // height: height * .60,
         // width: width * 1,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(12), color: color),
+          borderRadius: BorderRadius.circular(12),
+          color: color,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.2), // Adjust opacity as needed
+              spreadRadius: 2,
+              blurRadius: 2,
+              offset: const Offset(3, 8), // changes position of shadow
+            ),
+          ],
+        ),
         child: Padding(
           padding: const EdgeInsets.all(10),
           child: Column(children: [
