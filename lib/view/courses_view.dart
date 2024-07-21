@@ -52,7 +52,7 @@ class _CoursesViewState extends State<CoursesView> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     ImageContainer(
-                        width: width * .15,
+                        width: width * .18,
                         height: height * .07,
                         imageUrl: 'assets/images/pakistan-flag.svg'),
                     const Text(
@@ -64,9 +64,9 @@ class _CoursesViewState extends State<CoursesView> {
                     ),
                     const Spacer(),
                     RoundButton(
-                        height: height * .08,
+                        height: height * .05,
                         width: width * .28,
-                        title: '  Get\nStarted',
+                        title: '  Get Started',
                         onPress: () {
                           Navigator.pushNamed(
                               context, RoutesName.lessonDetailsView);
@@ -77,7 +77,7 @@ class _CoursesViewState extends State<CoursesView> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     ImageContainer(
-                        width: width * .15,
+                        width: width * .18,
                         height: height * .07,
                         imageUrl: 'assets/images/saudi-arabia-flag.svg'),
                     const Text(
@@ -89,9 +89,9 @@ class _CoursesViewState extends State<CoursesView> {
                     ),
                     const Spacer(),
                     RoundButton(
-                        height: height * .08,
+                        height: height * .05,
                         width: width * .28,
-                        title: '  Get\nStarted',
+                        title: '  Get Started',
                         onPress: () {
                           Navigator.pushNamed(
                               context, RoutesName.lessonDetailsView);
@@ -102,7 +102,7 @@ class _CoursesViewState extends State<CoursesView> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     ImageContainer(
-                        width: width * .15,
+                        width: width * .18,
                         height: height * .07,
                         imageUrl: 'assets/images/spain-flag.svg'),
                     const Text(
@@ -114,9 +114,9 @@ class _CoursesViewState extends State<CoursesView> {
                     ),
                     const Spacer(),
                     RoundButton(
-                        height: height * .08,
+                        height: height * .05,
                         width: width * .28,
-                        title: '  Get\nStarted',
+                        title: '  Get Started',
                         onPress: () {
                           Navigator.pushNamed(
                               context, RoutesName.lessonDetailsView);

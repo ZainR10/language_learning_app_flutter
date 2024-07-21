@@ -87,9 +87,7 @@ class _ProfileViewState extends State<ProfileView> {
                           fontSize: 28,
                           fontWeight: FontWeight.w400),
                     ),
-                    SizedBox(
-                      width: width * 0.05,
-                    ),
+                    const Spacer(),
                     Icon(
                       Icons.translate_sharp,
                       size: 35,
@@ -120,17 +118,17 @@ class _ProfileViewState extends State<ProfileView> {
                     // created a image holding container component to make code look clean
                     ImageContainer(
                       width: width * .25,
-                      height: height * .12,
+                      height: height * .10,
                       imageUrl: 'assets/images/pakistan-flag.svg',
                     ),
                     ImageContainer(
                       width: width * .25,
-                      height: height * .12,
+                      height: height * .10,
                       imageUrl: 'assets/images/saudi-arabia-flag.svg',
                     ),
                     ImageContainer(
                       width: width * .25,
-                      height: height * .12,
+                      height: height * .10,
                       imageUrl: 'assets/images/spain-flag.svg',
                     ),
                   ],
@@ -148,9 +146,7 @@ class _ProfileViewState extends State<ProfileView> {
                           fontSize: 28,
                           fontWeight: FontWeight.w400),
                     ),
-                    SizedBox(
-                      width: width * 0.05,
-                    ),
+                    const Spacer(),
                     Icon(
                       Icons.auto_graph_outlined,
                       size: 40,

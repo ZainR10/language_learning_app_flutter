@@ -42,7 +42,7 @@ class _ResultsViewState extends State<ResultsView> {
       bottomNavigationBar: CustomBottomNavBar(
           selectedIndex: _selectedIndex, onItemTapped: _onItemTapped),
       body: Padding(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: [
             const Text(
