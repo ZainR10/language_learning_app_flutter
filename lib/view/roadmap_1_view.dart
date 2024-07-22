@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:language_learning_app_flutter/res/components/roadmap_component.dart';
+
 import 'package:language_learning_app_flutter/res/components/round_button.dart';
 import 'package:language_learning_app_flutter/utils/routes/routes_name.dart';
 
@@ -26,7 +27,7 @@ class _RoadMapView1State extends State<RoadMapView1> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '1',
                 title: 'Greetings',
                 onPress: () {
@@ -37,7 +38,7 @@ class _RoadMapView1State extends State<RoadMapView1> {
                 height: height * .03,
               ),
               //self introduction
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '2',
                 title: 'Self Introduction',
                 onPress: () {
@@ -48,7 +49,7 @@ class _RoadMapView1State extends State<RoadMapView1> {
                 height: height * .03,
               ),
               //days of week
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '3',
                 title: 'Days of Week',
                 onPress: () {
@@ -59,7 +60,7 @@ class _RoadMapView1State extends State<RoadMapView1> {
                 height: height * .03,
               ),
               //Numbers
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '4',
                 title: 'Numbers',
                 onPress: () {
@@ -70,7 +71,7 @@ class _RoadMapView1State extends State<RoadMapView1> {
                 height: height * .03,
               ),
               //common phrases
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '5',
                 title: 'Common Phrases',
                 onPress: () {
@@ -81,7 +82,9 @@ class _RoadMapView1State extends State<RoadMapView1> {
                   width: width * .30,
                   height: height * .08,
                   title: 'Quiz',
-                  onPress: () {})
+                  onPress: () {
+                    Navigator.pushNamed(context, RoutesName.quizView);
+                  })
             ],
           ),
         ),

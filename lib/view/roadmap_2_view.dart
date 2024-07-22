@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:language_learning_app_flutter/res/components/roadmap_component.dart';
+
 import 'package:language_learning_app_flutter/res/components/round_button.dart';
 import 'package:language_learning_app_flutter/utils/routes/routes_name.dart';
 
@@ -26,7 +27,7 @@ class _RoadMapView2State extends State<RoadMapView2> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '1',
                 title: 'Basic Conversations',
                 onPress: () {
@@ -37,7 +38,7 @@ class _RoadMapView2State extends State<RoadMapView2> {
                 height: height * .03,
               ),
               //self introduction
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '2',
                 title: 'Simple Questions',
                 onPress: () {
@@ -48,7 +49,7 @@ class _RoadMapView2State extends State<RoadMapView2> {
                 height: height * .03,
               ),
               //days of week
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '3',
                 title: 'Basic Verbs',
                 onPress: () {
@@ -59,7 +60,7 @@ class _RoadMapView2State extends State<RoadMapView2> {
                 height: height * .03,
               ),
               //Numbers
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '4',
                 title: 'Asking for directions',
                 onPress: () {
@@ -70,7 +71,7 @@ class _RoadMapView2State extends State<RoadMapView2> {
                 height: height * .03,
               ),
               //common phrases
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '5',
                 title: 'Describing Family Members',
                 onPress: () {
@@ -81,7 +82,9 @@ class _RoadMapView2State extends State<RoadMapView2> {
                   width: width * .30,
                   height: height * .08,
                   title: 'Quiz',
-                  onPress: () {})
+                  onPress: () {
+                    Navigator.pushNamed(context, RoutesName.quizView);
+                  })
             ],
           ),
         ),

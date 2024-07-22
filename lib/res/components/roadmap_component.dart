@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class LessonComponent extends StatelessWidget {
+class RoadmapComponent extends StatelessWidget {
   final String title;
   final String lessonNumber;
   final VoidCallback onPress;
-  const LessonComponent(
+  const RoadmapComponent(
       {required this.lessonNumber,
       required this.onPress,
       required this.title,

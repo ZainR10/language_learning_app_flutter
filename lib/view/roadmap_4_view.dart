@@ -26,7 +26,7 @@ class _RoadMapView4State extends State<RoadMapView4> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '1',
                 title: 'Expressing Opinions',
                 onPress: () {
@@ -37,7 +37,7 @@ class _RoadMapView4State extends State<RoadMapView4> {
                 height: height * .03,
               ),
               //self introduction
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '2',
                 title: 'Describing People & Objects',
                 onPress: () {
@@ -48,7 +48,7 @@ class _RoadMapView4State extends State<RoadMapView4> {
                 height: height * .03,
               ),
               //days of week
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '3',
                 title: ' Cultural Phrases and Idioms',
                 onPress: () {
@@ -59,7 +59,7 @@ class _RoadMapView4State extends State<RoadMapView4> {
                 height: height * .03,
               ),
               //Numbers
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '4',
                 title: 'Formal vs. Informal Speech',
                 onPress: () {
@@ -70,7 +70,7 @@ class _RoadMapView4State extends State<RoadMapView4> {
                 height: height * .03,
               ),
               //common phrases
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '5',
                 title: 'Debating Skills',
                 onPress: () {
@@ -81,7 +81,9 @@ class _RoadMapView4State extends State<RoadMapView4> {
                   width: width * .30,
                   height: height * .08,
                   title: 'Quiz',
-                  onPress: () {})
+                  onPress: () {
+                    Navigator.pushNamed(context, RoutesName.quizView);
+                  })
             ],
           ),
         ),

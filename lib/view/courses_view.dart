@@ -55,6 +55,9 @@ class _CoursesViewState extends State<CoursesView> {
                         width: width * .18,
                         height: height * .07,
                         imageUrl: 'assets/images/pakistan-flag.svg'),
+                    SizedBox(
+                      width: width * .02,
+                    ),
                     const Text(
                       'Urdu',
                       style: TextStyle(
@@ -80,6 +83,9 @@ class _CoursesViewState extends State<CoursesView> {
                         width: width * .18,
                         height: height * .07,
                         imageUrl: 'assets/images/saudi-arabia-flag.svg'),
+                    SizedBox(
+                      width: width * .02,
+                    ),
                     const Text(
                       'Arabic',
                       style: TextStyle(
@@ -105,6 +111,9 @@ class _CoursesViewState extends State<CoursesView> {
                         width: width * .18,
                         height: height * .07,
                         imageUrl: 'assets/images/spain-flag.svg'),
+                    SizedBox(
+                      width: width * .02,
+                    ),
                     const Text(
                       'Spainish',
                       style: TextStyle(

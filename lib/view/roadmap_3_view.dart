@@ -26,7 +26,7 @@ class _RoadMapView3State extends State<RoadMapView3> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '1',
                 title: 'Daily Routines',
                 onPress: () {
@@ -37,7 +37,7 @@ class _RoadMapView3State extends State<RoadMapView3> {
                 height: height * .03,
               ),
               //self introduction
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '2',
                 title: 'Shopping Vocabulary',
                 onPress: () {
@@ -48,7 +48,7 @@ class _RoadMapView3State extends State<RoadMapView3> {
                 height: height * .03,
               ),
               //days of week
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '3',
                 title: 'Food and Drinks',
                 onPress: () {
@@ -59,7 +59,7 @@ class _RoadMapView3State extends State<RoadMapView3> {
                 height: height * .03,
               ),
               //Numbers
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '4',
                 title: 'Making Plans ',
                 onPress: () {
@@ -70,7 +70,7 @@ class _RoadMapView3State extends State<RoadMapView3> {
                 height: height * .03,
               ),
               //common phrases
-              LessonComponent(
+              RoadmapComponent(
                 lessonNumber: '5',
                 title: 'Tenses',
                 onPress: () {},
@@ -79,7 +79,9 @@ class _RoadMapView3State extends State<RoadMapView3> {
                   width: width * .30,
                   height: height * .08,
                   title: 'Quiz',
-                  onPress: () {})
+                  onPress: () {
+                    Navigator.pushNamed(context, RoutesName.quizView);
+                  })
             ],
           ),
         ),
