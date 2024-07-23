@@ -1,8 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:language_learning_app_flutter/res/components/bottom_nav_bar.dart';
 import 'package:language_learning_app_flutter/res/components/image_container.dart';
 import 'package:language_learning_app_flutter/res/components/language_name_row.dart';
 import 'package:language_learning_app_flutter/res/components/progress_component.dart';
+import 'package:language_learning_app_flutter/utils/routes/general_utils.dart';
 import 'package:language_learning_app_flutter/utils/routes/routes_name.dart';
 
 class ProfileView extends StatefulWidget {
@@ -35,10 +37,10 @@ class _ProfileViewState extends State<ProfileView> {
 
   @override
   Widget build(BuildContext context) {
-    // media queiry funtions for hieght and width
-    //whole  size of screen is 1 from hieght and width
+    final auth = FirebaseAuth.instance;
     final height = MediaQuery.of(context).size.height * 1;
     final width = MediaQuery.of(context).size.width * 1;
+
     return Scaffold(
       bottomNavigationBar: CustomBottomNavBar(
           selectedIndex: _selectedIndex, onItemTapped: _onItemTapped),
@@ -47,37 +49,51 @@ class _ProfileViewState extends State<ProfileView> {
           padding: const EdgeInsets.all(10),
           child: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
+                InkWell(
+                  onTap: () {
+                    auth.signOut().then((value) {
+                      Navigator.pushNamed(context, RoutesName.loginView);
+                    }).onError((error, stackTrace) {
+                      GeneralUtils.snackBar(error.toString(), context);
+                    });
+                  },
+                  child: const Icon(
+                    Icons.logout,
+                    size: 40,
+                  ),
+                ),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10),
-                  //Profile pic and Name
-                  child: Expanded(
-                    child: Center(
-                      child: Column(
-                        children: [
-                          CircleAvatar(
-                            backgroundColor: Colors.indigoAccent,
-                            radius: 50,
-                            child: Icon(
-                              Icons.person_4_outlined,
-                              size: 50,
-                            ),
+                  child: Center(
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          backgroundColor: Colors.indigoAccent,
+                          radius: 50,
+                          child: Icon(
+                            Icons.person_4_outlined,
+                            size: 50,
                           ),
-                          Text(
-                            'Hi, Zain',
-                            style: TextStyle(fontSize: 40),
-                          ),
-                        ],
-                      ),
+                        ),
+                        Text(
+                          'Hi, Zain',
+                          style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.w500,
+                              letterSpacing: 1),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-                //Selected languages
                 SizedBox(
                   height: height * .03,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Text(
                       'Selected Languages',
@@ -91,7 +107,6 @@ class _ProfileViewState extends State<ProfileView> {
                     Icon(
                       Icons.translate_sharp,
                       size: 35,
-                      weight: 20,
                       color: Colors.indigo[700],
                       shadows: const [
                         BoxShadow(
@@ -105,7 +120,6 @@ class _ProfileViewState extends State<ProfileView> {
                 SizedBox(
                   height: height * .02,
                 ),
-                //LanguageNameRow (created a row component to make code look clean)
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 12),
                   child: LanguageNameRow(
@@ -115,7 +129,6 @@ class _ProfileViewState extends State<ProfileView> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    // created a image holding container component to make code look clean
                     ImageContainer(
                       width: width * .25,
                       height: height * .10,
@@ -150,7 +163,6 @@ class _ProfileViewState extends State<ProfileView> {
                     Icon(
                       Icons.auto_graph_outlined,
                       size: 40,
-                      weight: 20,
                       color: Colors.indigo[700],
                       shadows: const [
                         BoxShadow(
@@ -164,7 +176,6 @@ class _ProfileViewState extends State<ProfileView> {
                 SizedBox(
                   height: height * .02,
                 ),
-                //component for progress indicator
                 ProgressIndicatorComponent(
                   progressIndicators: [
                     ProgressIndicatorData(title: 'Urdu', currentStep: 3),

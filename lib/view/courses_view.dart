@@ -67,7 +67,7 @@ class _CoursesViewState extends State<CoursesView> {
                     ),
                     const Spacer(),
                     RoundButton(
-                        height: height * .05,
+                        height: height * .07,
                         width: width * .28,
                         title: '  Get Started',
                         onPress: () {
@@ -95,7 +95,7 @@ class _CoursesViewState extends State<CoursesView> {
                     ),
                     const Spacer(),
                     RoundButton(
-                        height: height * .05,
+                        height: height * .07,
                         width: width * .28,
                         title: '  Get Started',
                         onPress: () {
@@ -123,7 +123,7 @@ class _CoursesViewState extends State<CoursesView> {
                     ),
                     const Spacer(),
                     RoundButton(
-                        height: height * .05,
+                        height: height * .07,
                         width: width * .28,
                         title: '  Get Started',
                         onPress: () {

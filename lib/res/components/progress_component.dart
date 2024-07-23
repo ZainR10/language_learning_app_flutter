@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 
 class ProgressIndicatorComponent extends StatelessWidget {
@@ -20,11 +19,10 @@ class ProgressIndicatorComponent extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             boxShadow: [
               BoxShadow(
-                color:
-                    Colors.black.withOpacity(0.2), // Adjust opacity as needed
+                color: Colors.black.withOpacity(0.2),
                 spreadRadius: 2,
                 blurRadius: 2,
-                offset: const Offset(3, 8), // changes position of shadow
+                offset: const Offset(3, 8),
               ),
             ],
           ),

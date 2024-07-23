@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:flutter/material.dart';
 import 'package:language_learning_app_flutter/res/components/roadmap_details_component.dart';
 import 'package:language_learning_app_flutter/utils/routes/routes_name.dart';

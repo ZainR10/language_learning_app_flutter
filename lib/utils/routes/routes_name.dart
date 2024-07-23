@@ -8,5 +8,8 @@ class RoutesName {
   static const String roadMapView4 = 'roadmap_4_view';
   static const String lessonsView = 'lessons_view';
   static const String quizView = 'quiz_view';
+  static const String splashView = 'splash_view';
+  static const String loginView = 'login_view';
+  static const String signUpView = 'sign_up_view';
   static const String roadMapDetailsView = 'roadmap_details_view';
 }

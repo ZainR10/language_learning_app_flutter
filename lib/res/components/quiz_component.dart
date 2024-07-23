@@ -41,13 +41,11 @@ class QuizComponent extends StatelessWidget {
               //     color: Colors.black, style: BorderStyle.solid, width: 2),
               color: Colors.indigoAccent[200]?.withOpacity(0.2),
               borderRadius: BorderRadius.circular(12)),
-          child: Expanded(
-            child: Text(
-              question,
-              style: const TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.w600,
-              ),
+          child: Text(
+            question,
+            style: const TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ),
@@ -64,14 +62,12 @@ class QuizComponent extends StatelessWidget {
               //     color: Colors.black, style: BorderStyle.solid, width: 2),
               color: Colors.indigoAccent[200]?.withOpacity(0.2),
               borderRadius: BorderRadius.circular(12)),
-          child: Expanded(
-            child: Center(
-              child: Text(
-                opt1,
-                style: const TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w600,
-                ),
+          child: Center(
+            child: Text(
+              opt1,
+              style: const TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),
@@ -89,14 +85,12 @@ class QuizComponent extends StatelessWidget {
               //     color: Colors.black, style: BorderStyle.solid, width: 2),
               color: Colors.indigoAccent[200]?.withOpacity(0.2),
               borderRadius: BorderRadius.circular(12)),
-          child: Expanded(
-            child: Center(
-              child: Text(
-                opt2,
-                style: const TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w600,
-                ),
+          child: Center(
+            child: Text(
+              opt2,
+              style: const TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),
@@ -114,14 +108,12 @@ class QuizComponent extends StatelessWidget {
               //     color: Colors.black, style: BorderStyle.solid, width: 2),
               color: Colors.indigoAccent[200]?.withOpacity(0.2),
               borderRadius: BorderRadius.circular(12)),
-          child: Expanded(
-            child: Center(
-              child: Text(
-                opt3,
-                style: const TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.w600,
-                ),
+          child: Center(
+            child: Text(
+              opt3,
+              style: const TextStyle(
+                fontSize: 30,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),
