@@ -67,11 +67,15 @@ class Routes {
         }
       case RoutesName.lessonsView:
         {
+          final args = settings.arguments as Map<String, dynamic>;
           return MaterialPageRoute(
-            builder: (BuildContext context) => const LessonsView(),
+            builder: (BuildContext context) => LessonsView(
+              language: args['language'],
+              level: args['level'],
+              topic: args['topic'],
+            ),
           );
         }
-
       case RoutesName.splashView:
         {
           return MaterialPageRoute(

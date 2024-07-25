@@ -31,7 +31,15 @@ class _RoadMapView1State extends State<RoadMapView1> {
                 lessonNumber: '1',
                 title: 'Greetings',
                 onPress: () {
-                  Navigator.pushNamed(context, RoutesName.lessonsView);
+                  Navigator.pushNamed(
+                    context,
+                    RoutesName.lessonsView,
+                    arguments: {
+                      'language': 'Urdu',
+                      'level': 1,
+                      'topic': 'Greetings',
+                    },
+                  );
                 },
               ),
               SizedBox(
