@@ -3,9 +3,9 @@ import 'package:language_learning_app_flutter/res/components/themes.dart';
 import 'package:language_learning_app_flutter/utils/routes/routes.dart';
 import 'package:language_learning_app_flutter/utils/routes/routes_name.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:language_learning_app_flutter/view/new_screen.dart';
 import 'package:language_learning_app_flutter/view_models/auth_models/login_model.dart';
 import 'package:language_learning_app_flutter/view_models/auth_models/signup_model.dart';
+import 'package:language_learning_app_flutter/view_models/languages_data/data.dart';
 
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
@@ -17,6 +17,8 @@ void main() async {
   );
 
   runApp(const MyApp());
+
+  await uploadDataToFirestore();
 }
 
 class MyApp extends StatelessWidget {
@@ -38,9 +40,9 @@ class MyApp extends StatelessWidget {
           title: 'Flutter Demo',
           theme: appThemeData,
           debugShowCheckedModeBanner: false,
-          // initialRoute: RoutesName.splashView,
-          // onGenerateRoute: Routes.generateRoute,
-          home: const NewScreen(),
+          initialRoute: RoutesName.splashView,
+          onGenerateRoute: Routes.generateRoute,
+          // home: const NewScreen(),
         ));
   }
 }
