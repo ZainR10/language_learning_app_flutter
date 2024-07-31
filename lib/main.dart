@@ -6,6 +6,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:language_learning_app_flutter/view_models/auth_models/login_model.dart';
 import 'package:language_learning_app_flutter/view_models/auth_models/signup_model.dart';
 import 'package:language_learning_app_flutter/view_models/languages_data/data.dart';
+import 'package:language_learning_app_flutter/view_models/quiz_data/quiz_upload.dart';
 
 import 'package:provider/provider.dart';
 import 'firebase_options.dart';
@@ -19,6 +20,7 @@ void main() async {
   runApp(const MyApp());
 
   await uploadDataToFirestore();
+  await prepareAndUploadQuizData();
 }
 
 class MyApp extends StatelessWidget {

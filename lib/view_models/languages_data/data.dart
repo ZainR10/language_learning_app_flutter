@@ -40,15 +40,21 @@ Future<void> uploadDataToFirestore() async {
     FirebaseFirestore firestore = FirebaseFirestore.instance;
     CollectionReference languages = firestore.collection('languages');
 
-    data['languages'].forEach((language, levels) {
-      languages.doc(language).set({
-        'levels': levels,
-      });
-    });
+    data['languages'].forEach((language, levels) async {
+      DocumentReference languageDoc = languages.doc(language);
+      DocumentSnapshot snapshot = await languageDoc.get();
 
-    if (kDebugMode) {
-      print('Data uploaded successfully');
-    }
+      if (!snapshot.exists) {
+        await languageDoc.set({'levels': levels});
+        if (kDebugMode) {
+          print('Data uploaded for language: $language');
+        }
+      } else {
+        if (kDebugMode) {
+          print('Data already exists for language: $language');
+        }
+      }
+    });
   } catch (e) {
     if (kDebugMode) {
       print('Error uploading data: $e');
