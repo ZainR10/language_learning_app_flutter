@@ -19,8 +19,6 @@ class _ShowdataState extends State<Showdata> {
         stream: FirebaseFirestore.instance
             .collection('languages')
             .doc('urdu')
-            .collection('levels')
-            .doc('level1')
             .snapshots(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
@@ -37,28 +35,34 @@ class _ShowdataState extends State<Showdata> {
             );
           } else {
             final data = snapshot.data!.data() as Map<String, dynamic>;
-            final topics = data['topics'] as Map<String, dynamic>?;
-
-            if (topics == null || topics.isEmpty) {
-              return const Center(
-                child: Text("No topics found"),
-              );
-            }
+            final levels = data['levels'] as Map<String, dynamic>;
 
             return ListView.builder(
-              itemCount: topics.keys.length,
+              itemCount: levels.length,
               itemBuilder: (context, index) {
-                final topicName = topics.keys.elementAt(index);
-                final lessons = topics[topicName] as List<dynamic>?;
+                final levelName = levels.keys.elementAt(index);
+                final topics = levels[levelName] as Map<String, dynamic>;
 
                 return ExpansionTile(
-                  title: Text(topicName),
-                  children: lessons != null
-                      ? lessons
-                          .map((lesson) =>
-                              ListTile(title: Text(lesson.toString())))
-                          .toList()
-                      : [const ListTile(title: Text('No lessons found'))],
+                  title: Text(levelName),
+                  children: topics.entries.map((entry) {
+                    final topicName = entry.key;
+                    final lessons =
+                        (entry.value as List<dynamic>).map((lesson) {
+                      final lessonMap = lesson as Map<String, dynamic>;
+                      return ListTile(
+                        title: Text(lessonMap['lessonEnglish']),
+                        subtitle: Text(lessonMap['lessonNative']),
+                      );
+                    }).toList();
+
+                    return ExpansionTile(
+                      title: Text(topicName),
+                      children: lessons.isNotEmpty
+                          ? lessons
+                          : [const ListTile(title: Text('No lessons found'))],
+                    );
+                  }).toList(),
                 );
               },
             );
@@ -68,6 +72,7 @@ class _ShowdataState extends State<Showdata> {
     );
   }
 }
+
 
  // StreamBuilder<QuerySnapshot>(
         //   stream: FirebaseFirestore.instance.collection('Users').snapshots(),
