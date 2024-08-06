@@ -1,7 +1,7 @@
 final Map<String, dynamic> level1Urdu = {
   "Greetings": [
     {"lessonEnglish": "Hi", "lessonNative": "سلام"},
-    {"lessonEnglish": "Goodbye", "lessonNative": "خداحافظ"},
+    {"lessonEnglish": "Goodbye", "lessonNative": "الوداع"},
     {"lessonEnglish": "Good Morning", "lessonNative": "صبح بخیر"}
   ],
   "SelfIntroduction": [

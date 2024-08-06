@@ -23,6 +23,19 @@ class Routes {
             builder: (BuildContext context) => const ProfileView(),
           );
         }
+
+      case RoutesName.lessonsView:
+        final args = settings.arguments;
+        if (args is LessonsViewArguments) {
+          return MaterialPageRoute(
+            builder: (context) => LessonsView(
+              dbDocLanguage: args.dbDocLanguage,
+              dbLevelNumber: args.dbLevelNumber,
+              dbTopicTitle: args.dbTopicTitle,
+            ),
+          );
+        }
+        return _errorRoute();
       case RoutesName.coursesView:
         {
           return MaterialPageRoute(
@@ -65,13 +78,7 @@ class Routes {
             builder: (BuildContext context) => const RoadMapView4(),
           );
         }
-      case RoutesName.lessonsView:
-        {
-          final args = settings.arguments as Map<String, dynamic>;
-          return MaterialPageRoute(
-            builder: (BuildContext context) => const LessonsView(),
-          );
-        }
+
       case RoutesName.splashView:
         {
           return MaterialPageRoute(
@@ -110,4 +117,18 @@ class Routes {
       );
     });
   }
+}
+
+class LessonsViewArguments {
+  final String
+      dbDocLanguage; //firebase doc name which is with language collection
+  final String
+      dbTopicTitle; //topic title is under level name like greetings , self into etc
+  final String dbLevelNumber; //as string it is level number under levels
+
+  LessonsViewArguments({
+    required this.dbDocLanguage,
+    required this.dbLevelNumber,
+    required this.dbTopicTitle,
+  });
 }

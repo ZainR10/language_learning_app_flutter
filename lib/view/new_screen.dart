@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class NewScreen extends StatefulWidget {
@@ -14,16 +15,22 @@ class _NewScreenState extends State<NewScreen> {
 
   Future<void> addData(String title, String desc) async {
     if (title.isEmpty || desc.isEmpty) {
-      print('Enter required fields');
+      if (kDebugMode) {
+        print('Enter required fields');
+      }
     } else {
       try {
         await FirebaseFirestore.instance
             .collection("Users")
             .doc(title)
             .set({"Title": title, "Description": desc});
-        print('Data inserted');
+        if (kDebugMode) {
+          print('Data inserted');
+        }
       } catch (e) {
-        print('Error adding data: $e');
+        if (kDebugMode) {
+          print('Error adding data: $e');
+        }
       }
     }
   }

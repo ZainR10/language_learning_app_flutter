@@ -3,7 +3,14 @@ import 'package:language_learning_app_flutter/res/components/lessons_component.d
 import 'package:language_learning_app_flutter/res/components/round_button.dart';
 
 class LessonsView extends StatefulWidget {
-  const LessonsView({super.key});
+  final String dbDocLanguage;
+  final String dbTopicTitle;
+  final String dbLevelNumber;
+  const LessonsView(
+      {super.key,
+      required this.dbDocLanguage,
+      required this.dbLevelNumber,
+      required this.dbTopicTitle});
 
   @override
   State<LessonsView> createState() => _LessonsViewState();
@@ -30,9 +37,27 @@ class _LessonsViewState extends State<LessonsView> {
                 width: width * 1,
                 lessonEnglish: 'Hi',
                 lessonNative: 'سلام',
-                lessontitle: 'How to Greet In Urdu:'),
+                lessontitle: 'Greetings in Urdu:'),
+            SizedBox(
+              height: height * .02,
+            ),
+            LessonsComponent(
+                height: height * .35,
+                width: width * 1,
+                lessonEnglish: 'Goodbye',
+                lessonNative: 'الوداع',
+                lessontitle: 'Greetings in Urdu:'),
+            SizedBox(
+              height: height * .02,
+            ),
+            LessonsComponent(
+                height: height * .35,
+                width: width * 1,
+                lessonEnglish: 'Good Morning',
+                lessonNative: 'صبح بخیر',
+                lessontitle: 'Greetings in Urdu:'),
             RoundButton(
-                width: width * .30,
+                width: width * 1,
                 height: height * .08,
                 title: 'Next',
                 onPress: () {})

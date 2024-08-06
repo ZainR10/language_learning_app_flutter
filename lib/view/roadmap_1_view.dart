@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:language_learning_app_flutter/res/components/roadmap_component.dart';
 
 import 'package:language_learning_app_flutter/res/components/round_button.dart';
+import 'package:language_learning_app_flutter/utils/routes/routes.dart';
 import 'package:language_learning_app_flutter/utils/routes/routes_name.dart';
 
 class RoadMapView1 extends StatefulWidget {
@@ -34,11 +35,10 @@ class _RoadMapView1State extends State<RoadMapView1> {
                   Navigator.pushNamed(
                     context,
                     RoutesName.lessonsView,
-                    arguments: {
-                      'language': 'Urdu',
-                      'level': 1,
-                      'topic': 'Greetings',
-                    },
+                    arguments: LessonsViewArguments(
+                        dbDocLanguage: "urdu",
+                        dbLevelNumber: '1',
+                        dbTopicTitle: 'greetings'),
                   );
                 },
               ),
